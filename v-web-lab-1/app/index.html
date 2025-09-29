@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/main.js"></script>
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Голова (Header) -->
+    <header class="header">
+      <div class="header-content">
+        <button class="url-btn" name="home-btn" data-url="http://localhost:5173/">
+          <img src="/src/image/home-icon.png" alt="Home" width="20" height="20">
+        </button>
+        <div class="search-container">
+          <input type="text" placeholder="Поиск..." class="search-input" id="searchInput">
+          <button class="search-btn">
+            <img src="/src/image/search-icon.png" alt="Search" width="16" height="16">
+          </button>
+        </div>
+        <div class="header-actions">
+          <button class="url-btn" name="favorite-btn" data-url="http://localhost:5173/">
+            <img src="/src/image/heart-icon.png" alt="Favorites" width="20" height="20">
+          </button>
+          <button class="url-btn" name="cart-btn" data-url="http://localhost:5173/">
+            <img src="/src/image/cart-icon.png" alt="Cart" width="20" height="20">
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <!-- Тело (Main content) -->
+    <main class="main-content" id="searchInput">
+      
+      <!-- Результаты поиска (изначально скрыты) -->
+      <section class="search-results" id="searchResults" style="display: none;">
+        <h2 class="search-title">Результаты поиска</h2>
+        <div class="products-grid" id="searchResultsGrid"></div>
+      </section>
+
+      <!-- Основной контент с товарами -->
+      <section class="products-section">
+        <h1 class="section-title">Футболки</h1>
+        <div class="products-grid">
+          
+          <!-- Футболка 1 -->
+          <div class="product-card" data-name="красная футболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Футболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Красная футболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Футболка с принтом</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Футболка 2 -->
+          <div class="product-card" data-name="синяя футболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Футболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Синяя футболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Футболка с принтом</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Футболка 3 -->
+          <div class="product-card" data-name="футболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Футболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Футболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Футболка с принтом</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Футболка 4 -->
+          <div class="product-card" data-name="футболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Футболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Футболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Футболка с принтом</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Футболка 5 -->
+          <div class="product-card" data-name="футболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Футболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Футболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Футболка с принтом</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="products-section">
+        <h1 class="section-title">Бейсболки</h1>
+        <div class="products-grid">
+          
+          <!-- Бейсболка 1 -->
+          <div class="product-card" data-name="зеленая бейсболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Бейсболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Бейсболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Стильная бейсболка</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Бейсболка 2 -->
+          <div class="product-card" data-name="красная бейсболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Бейсболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Красная бейсболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Стильная бейсболка</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Бейсболка 3 -->
+          <div class="product-card" data-name="бейсболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Бейсболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Бейсболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Стильная бейсболка</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Бейсболка 4 -->
+          <div class="product-card" data-name="желтая бейсболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Бейсболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Желтая бейсболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Стильная бейсболка</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+          <!-- Бейсболка 5 -->
+          <div class="product-card" data-name="бейсболка">
+            <div class="product-image">
+              <img src="/src/image/default-image.png" alt="Бейсболка" width="200" height="200">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Бейсболка</h3>
+              <div class="price-container">
+                <span class="current-price">999 ₽</span>
+                <span class="old-price">1999 ₽</span>
+              </div>
+              <p class="product-description">Стильная бейсболка</p>
+              <button class="add-to-cart-btn">В корзину</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <div class="divider"></div>
+
+    <!-- Подвал (Footer) -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Магазин</p>
+        <p>Политика и безопасность</p>
+        <p>Cookie</p>
+      </div>
+    </footer>
+  </body>
+</html>
