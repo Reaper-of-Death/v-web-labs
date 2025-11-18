@@ -1,10 +1,10 @@
-import { useSearchParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 
 export const useSearch = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('q') || '';
 
-  const setSearchQuery = (query) => {
+  const setSearchQuery = (query: string) => {
     if (query) {
       searchParams.set('q', query);
     } else {

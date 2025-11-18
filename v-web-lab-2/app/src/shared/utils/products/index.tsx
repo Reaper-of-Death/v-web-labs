@@ -1,25 +1,50 @@
+import { type FC } from 'react';
 import { create } from "../../../entities/product";
-import { Card } from "../../../widgets/product";
+import { Card } from '../../../widgets/product/card'; 
 import { useSearch } from "../../../features/product/search/useSearch";
+import defaultImage from "../products/image/default-image.png";
 
-export const ProductList = () => {
+interface LocalProduct {
+  id: number;
+  title: string;
+  price: number;
+  discountPrice: number;
+  image: {
+    url: string;
+    alt: string;
+  };
+}
+
+// Преобразуем продукт из create в нужный формат
+const createProduct = (id: number, title: string, price: number, discountPrice: number, alt: string): LocalProduct => ({
+  id,
+  title,
+  price,
+  discountPrice,
+  image: {
+    url: defaultImage,
+    alt
+  }
+});
+
+export const ProductList: FC = () => {
   const { searchQuery } = useSearch();
   
-  const products = [
-    create(1, 'Белая футболка', 1999, 1499, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Белая футболка'}),
-    create(2, 'Красная футболка', 2999, 2499, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Красная футболка'}),
-    create(3, 'Зеленая футболка', 2599, 1999, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Зеленая футболка'}),
-    create(4, 'Синяя футболка', 5999, 5699, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Синяя футболка'}),
-    create(5, 'Желтая футболка', 3499, 2999, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Желтая футболка'}),
-    create(6, 'Белая бесболка', 1599, 1399, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Белая бесболка'}),
-    create(7, 'Красная бесболка', 3999, 3499, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Красная бесболка'}),
-    create(8, 'Зеленая бесболка', 2299, 1999, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Зеленая бесболка'}),
-    create(9, 'Синяя бесболка', 7999, 6999, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Синяя бесболка'}),
-    create(10, 'Желтая бесболка', 4999, 3999, {url: 'src/shared/utils/products/image/default-image.png', alt: 'Желтая бесболка'})
+  const products: LocalProduct[] = [
+    createProduct(1, 'Белая футболка', 1999, 1499, 'Белая футболка'),
+    createProduct(2, 'Красная футболка', 2999, 2499, 'Красная футболка'),
+    createProduct(3, 'Зеленая футболка', 2599, 1999, 'Зеленая футболка'),
+    createProduct(4, 'Синяя футболка', 5999, 5699, 'Синяя футболка'),
+    createProduct(5, 'Желтая футболка', 3499, 2999, 'Желтая футболка'),
+    createProduct(6, 'Белая бесболка', 1599, 1399, 'Белая бесболка'),
+    createProduct(7, 'Красная бесболка', 3999, 3499, 'Красная бесболка'),
+    createProduct(8, 'Зеленая бесболка', 2299, 1999, 'Зеленая бесболка'),
+    createProduct(9, 'Синяя бесболка', 7999, 6999, 'Синяя бесболка'),
+    createProduct(10, 'Желтая бесболка', 4999, 3999, 'Желтая бесболка')
   ];
 
   // Защищенная фильтрация
-   const filteredProducts = products.filter(product => {
+  const filteredProducts = products.filter(product => {
     // Если searchQuery пустой или undefined, показываем все товары
     if (!searchQuery || searchQuery.trim() === '') {
       return true;

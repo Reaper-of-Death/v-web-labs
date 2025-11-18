@@ -1,10 +1,11 @@
-import { Header } from "../../widgets/layout/header";
+import { type FC } from 'react';
+import { Header } from '../../widgets/layout/header';
 import { Footer } from "../../widgets/layout/footer";
-import { ProductList } from "../../shared/utils/Products";
+import { ProductList } from "../../shared/utils/products";
 
-export const Home = () => {
+export const Home: FC = () => {
   return (
-    <div class="font-sans leading-relaxed min-h-screen flex flex-col bg-gray-50 overflow-x-hidden">
+    <div className="font-sans leading-relaxed min-h-screen flex flex-col bg-gray-50 overflow-x-hidden">
       <Header />
 
       <main className="flex-grow flex-1 p-5 w-full">
