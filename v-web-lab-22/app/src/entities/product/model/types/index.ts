@@ -1,7 +1,8 @@
 // Базовый интерфейс для продукта
 export interface Product {
-  id: string | number;
-  title: string;
+  id: number;
+  name: string;
+  description?: string;
   price: number;
   discountPrice?: number; // опциональное поле
   image: string;
@@ -9,14 +10,16 @@ export interface Product {
 
 // Функция с явной типизацией параметров и возвращаемого значения
 export const create = (
-  id: string | number,
-  title: string,
+  id: number,
+  name: string,
+  description: string | undefined,
   price: number,
   discountPrice: number | undefined,
   image: string
 ): Product => ({
   id,
-  title,
+  name,
+  description,
   price,
   discountPrice,
   image,

@@ -7,6 +7,19 @@ export default defineConfig({
 
   plugins: [react(), tailwindcss()],
   
+  server: {
+    host: 'localhost',
+    port: 3000,
+    open: true, // автоматически открывать браузер
+    strictPort: true // не менять порт если занят
+  },
+
+  preview: {
+    host: 'localhost',
+    port: 4173,
+    open: true
+  },
+  
   build: {
     assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.gif', '**/*.webp'],
   },

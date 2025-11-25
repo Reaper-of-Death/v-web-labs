@@ -1,10 +1,4 @@
-// Интерфейс для продукта
-interface Product {
-  id: string | number;
-  name: string;
-  description?: string;
-  // другие поля продукта
-}
+import type { Product } from "../../../entities/product";
 
 // Вариант 1: Базовая типизация
 export const filterProducts = (products: Product[], query: string): Product[] => {
