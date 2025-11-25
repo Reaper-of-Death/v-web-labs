@@ -1,9 +1,9 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 // Интерфейс для пропсов компонента
 interface PriceProps {
-  price?: number | string;
-  discountPrice?: number | string | null;
+  price: number;
+  discountPrice?: number | null;
 }
 
 // Вариант 1: С использованием FC

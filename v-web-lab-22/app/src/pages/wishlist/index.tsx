@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Header } from '../../widgets/layout/header';
 import { Footer } from '../../widgets/layout/footer';
 

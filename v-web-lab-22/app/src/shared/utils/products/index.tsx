@@ -1,46 +1,26 @@
-import { type FC } from 'react';
-import { create } from "../../../entities/product";
+import type { FC } from 'react';
+import type { Product } from '../../../entities/product';
+import { createProduct } from "../../../entities/product";
 import { Card } from '../../../widgets/product/card'; 
 import { useSearch } from "../../../features/product/search/useSearch";
 import defaultImage from "../products/image/default-image.png";
 
-interface LocalProduct {
-  id: number;
-  title: string;
-  price: number;
-  discountPrice: number;
-  image: {
-    url: string;
-    alt: string;
-  };
-}
-
-// Преобразуем продукт из create в нужный формат
-const createProduct = (id: number, title: string, price: number, discountPrice: number, alt: string): LocalProduct => ({
-  id,
-  title,
-  price,
-  discountPrice,
-  image: {
-    url: defaultImage,
-    alt
-  }
-});
+const defaultImageConstruction = {url: defaultImage, alt: defaultImage}
 
 export const ProductList: FC = () => {
   const { searchQuery } = useSearch();
   
-  const products: LocalProduct[] = [
-    createProduct(1, 'Белая футболка', 1999, 1499, 'Белая футболка'),
-    createProduct(2, 'Красная футболка', 2999, 2499, 'Красная футболка'),
-    createProduct(3, 'Зеленая футболка', 2599, 1999, 'Зеленая футболка'),
-    createProduct(4, 'Синяя футболка', 5999, 5699, 'Синяя футболка'),
-    createProduct(5, 'Желтая футболка', 3499, 2999, 'Желтая футболка'),
-    createProduct(6, 'Белая бесболка', 1599, 1399, 'Белая бесболка'),
-    createProduct(7, 'Красная бесболка', 3999, 3499, 'Красная бесболка'),
-    createProduct(8, 'Зеленая бесболка', 2299, 1999, 'Зеленая бесболка'),
-    createProduct(9, 'Синяя бесболка', 7999, 6999, 'Синяя бесболка'),
-    createProduct(10, 'Желтая бесболка', 4999, 3999, 'Желтая бесболка')
+  const products: Product[] = [
+    createProduct(1, 'Белая футболка', '', 1999, 1499, defaultImageConstruction),
+    createProduct(2, 'Красная футболка', '', 2999, 2499, defaultImageConstruction),
+    createProduct(3, 'Зеленая футболка', '', 2599, 1999, defaultImageConstruction),
+    createProduct(4, 'Синяя футболка', '', 5999, 5699, defaultImageConstruction),
+    createProduct(5, 'Желтая футболка', '', 3499, 2999, defaultImageConstruction),
+    createProduct(6, 'Белая бесболка', '', 1599, 1399, defaultImageConstruction),
+    createProduct(7, 'Красная бесболка', '', 3999, 3499, defaultImageConstruction),
+    createProduct(8, 'Зеленая бесболка', '', 2299, 1999, defaultImageConstruction),
+    createProduct(9, 'Синяя бесболка', '', 7999, 6999, defaultImageConstruction),
+    createProduct(10, 'Желтая бесболка', '', 4999, 3999, defaultImageConstruction)
   ];
 
   // Защищенная фильтрация
@@ -50,15 +30,15 @@ export const ProductList: FC = () => {
       return true;
     }
     
-    // Защита от ошибок если product или product.title undefined
-    if (!product || !product.title) {
+    // Защита от ошибок если product или product.name undefined
+    if (!product || !product.name) {
       return false;
     }
     
-    // Безопасный поиск по title
+    // Безопасный поиск по name
     const query = searchQuery.toLowerCase().trim();
-    const productTitle = product.title.toLowerCase();
-    const matches = productTitle.includes(query);
+    const productname = product.name.toLowerCase();
+    const matches = productname.includes(query);
     
     return matches;
   });

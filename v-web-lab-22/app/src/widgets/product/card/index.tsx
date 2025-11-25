@@ -1,17 +1,6 @@
-import { type FC } from 'react';
-import { Image, Price, Title } from '../../../entities/product';
-
-// Интерфейс для продукта
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  discountPrice: number;
-  image: {
-    url: string;
-    alt: string;
-  };
-}
+import type { FC } from 'react';
+import { Image, Price, Name } from '../../../entities/product';
+import type { Product } from '../../../entities/product';
 
 // Интерфейс для пропсов компонента
 interface CardProps {
@@ -26,7 +15,7 @@ export const Card: FC<CardProps> = ({ product }) => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <Title className="text-gray-900 hover:text-blue-600 transition" title={product.title} />
+        <Name className="text-gray-900 hover:text-blue-600 transition" name={product.name} />
         <Price price={product.price} discountPrice={product.discountPrice} />				
       </div>			
     </div>

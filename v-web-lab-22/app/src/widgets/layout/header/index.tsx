@@ -1,4 +1,4 @@
-import { type FC, type FormEvent, type ChangeEvent } from 'react';
+import type { FC, FormEvent, ChangeEvent } from 'react';
 import { Link } from "react-router-dom";
 import { useSearch } from "../../../features/product/search/useSearch";
 

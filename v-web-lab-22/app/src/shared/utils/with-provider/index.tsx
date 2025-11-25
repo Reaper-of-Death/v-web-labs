@@ -1,4 +1,4 @@
-import { type ComponentType, type JSXElementConstructor, type ReactElement } from 'react';
+import type { ComponentType, ReactElement } from 'react';
 
 // Вариант 1: Универсальный вариант с дженериками
 export function withProvider<P extends object>(

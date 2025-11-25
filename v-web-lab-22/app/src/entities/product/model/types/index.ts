@@ -5,17 +5,23 @@ export interface Product {
   description?: string;
   price: number;
   discountPrice?: number; // опциональное поле
-  image: string;
+  image: {
+    url: string;
+    alt: string;
+  };
 }
 
 // Функция с явной типизацией параметров и возвращаемого значения
-export const create = (
+export const createProduct = (
   id: number,
   name: string,
   description: string | undefined,
   price: number,
   discountPrice: number | undefined,
-  image: string
+  image: {
+    url: string;
+    alt: string;
+  }
 ): Product => ({
   id,
   name,

@@ -1,4 +1,4 @@
-import { type FC, type ImgHTMLAttributes } from 'react';
+import type { FC, ImgHTMLAttributes } from 'react';
 
 // Интерфейс для пропсов компонента
 interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
