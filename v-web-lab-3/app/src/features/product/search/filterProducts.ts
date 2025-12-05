@@ -1,6 +1,5 @@
 import type { Product } from "../../../entities/product";
 
-// Вариант 1: Базовая типизация
 export const filterProducts = (products: Product[], query: string): Product[] => {
   if (!query) return products;
   

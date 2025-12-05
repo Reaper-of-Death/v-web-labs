@@ -7,10 +7,7 @@ import defaultImage from "../products/image/default-image.png";
 
 const defaultImageConstruction = {url: defaultImage, alt: defaultImage}
 
-export const ProductList: FC = () => {
-  const { searchQuery } = useSearch();
-  
-  const products: Product[] = [
+export const products: Product[] = [
     createProduct(1, 'Белая футболка', '', 1999, 1499, defaultImageConstruction),
     createProduct(2, 'Красная футболка', '', 2999, 2499, defaultImageConstruction),
     createProduct(3, 'Зеленая футболка', '', 2599, 1999, defaultImageConstruction),
@@ -22,6 +19,9 @@ export const ProductList: FC = () => {
     createProduct(9, 'Синяя бесболка', '', 7999, 6999, defaultImageConstruction),
     createProduct(10, 'Желтая бесболка', '', 4999, 3999, defaultImageConstruction)
   ];
+
+export const ProductList: FC = () => {
+  const { searchQuery } = useSearch();
 
   // Защищенная фильтрация
   const filteredProducts = products.filter(product => {
