@@ -19,8 +19,5 @@ export default defineConfig({
     port: 4173,
     open: true
   },
-  
-  build: {
-    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.gif', '**/*.webp'],
-  },
+
 })

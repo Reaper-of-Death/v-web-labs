@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Header } from '../../widgets/layout/header';
 import { Footer } from '../../widgets/layout/footer';
+import { CartL } from '../../widgets/cart/cart';
 
 export const Cart: FC = () => {
   return (
@@ -8,7 +9,7 @@ export const Cart: FC = () => {
       <Header />
 
       <div className="flex-grow flex-1 p-5">
-        Cart Page
+        <CartL />
       </div>
 
       <Footer />

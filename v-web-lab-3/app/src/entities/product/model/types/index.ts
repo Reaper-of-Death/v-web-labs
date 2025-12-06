@@ -11,6 +11,19 @@ export interface Product {
   };
 }
 
+export interface CartProduct {
+  id: number;
+  name: string;
+  description?: string;
+  price: number;
+  discountPrice?: number; // опциональное поле
+  image: {
+    url: string;
+    alt: string;
+  };
+  count: number;
+}
+
 // Функция с явной типизацией параметров и возвращаемого значения
 export const createProduct = (
   id: number,
