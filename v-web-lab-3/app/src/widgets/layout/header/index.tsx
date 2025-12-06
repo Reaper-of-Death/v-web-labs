@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { useSearch } from "../../../features/product/search/useSearch";
 import { products } from '../../../shared/utils/products';
 import { useState, useEffect, useRef } from 'react';
+import { CartIndicator } from '../../../features/product/add-to-cart/ui';
 
 // Импортируем картинки с относительными путями
 import homeIcon from './image/home-icon.png';
 import searchIcon from './image/search-icon.png';
 import heartIcon from './image/heart-icon.png';
-import cartIcon from './image/cart-icon.png';
 
 export const Header: FC = () => {
   const { searchQuery, setSearchQuery, clearSearch } = useSearch();
@@ -201,7 +201,7 @@ export const Header: FC = () => {
           </Link>
 
           <Link to="/cart" className="bg-none border-none cursor-pointer p-2 rounded transition-colors duration-300 hover:bg-gray-100">
-            <img src={cartIcon} alt="Cart" width="20" height="20" />
+            <CartIndicator />
           </Link>				
         </div>
       </div>
