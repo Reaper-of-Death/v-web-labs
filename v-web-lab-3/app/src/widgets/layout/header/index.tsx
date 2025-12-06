@@ -102,7 +102,7 @@ export const Header: FC = () => {
   }, []);
 
   return (
-    <header className="h-[50px] items-center flex p-1.5 border-b border-gray-210 relative">
+    <header className="fixed top-0 left-0 right-0 h-[50px] items-center flex p-1.5 border-b border-gray-210 bg-white z-50 shadow-sm">
       <div className="flex items-center justify-between w-full">
         <Link to="/" className="bg-none border-none cursor-pointer p-1.5 rounded transition-colors duration-300 hover:bg-gray-100">
           <img src={homeIcon} alt="Home" width="20" height="20" />

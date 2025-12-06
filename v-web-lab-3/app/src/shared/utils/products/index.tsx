@@ -44,7 +44,7 @@ export const ProductList: FC = () => {
   });
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto mt-6">
       {searchQuery && searchQuery.trim() !== '' && (
         <div className="mb-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-2">

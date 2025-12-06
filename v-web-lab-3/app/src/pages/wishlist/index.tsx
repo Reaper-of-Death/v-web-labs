@@ -7,7 +7,7 @@ export const Wishlist: FC = () => {
     <div className="font-sans leading-relaxed min-h-screen flex flex-col bg-gray-50">
       <Header />
 
-      <div className="flex-grow flex-1 p-5">
+      <div className="pt-[50px] pb-[60px] flex-grow flex-1 p-5">
         Wishlist Page
       </div>
 
